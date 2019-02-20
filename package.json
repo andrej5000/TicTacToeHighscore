@@ -1,7 +1,7 @@
 {
-    "name": "todolistapi",
+    "name": "tictactoe_highscore_api",
     "version": "1.0.0",
-    "description": "RESTful todo list API",
+    "description": "RESTful TicTacToe Highscore API",
     "main": "index.js",
     "scripts": {
         "test": "echo \\\"Error: no test specified\\\" && exit 1",
@@ -9,19 +9,19 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://gitlab.com/HerrDredd/todolistapi.git"
+        "url": "https://github.com/andrej5000/TicTacToeHighscore"
     },
     "keywords": [
         "RESTful",
         "API",
         "Tutorial"
     ],
-    "author": "Dredd",
+    "author": "andrej5000",
     "license": "ISC",
     "bugs": {
-        "url": "https://gitlab.com/HerrDredd/todolistapi/issues"
+        "url": "https://github.com/andrej5000/TicTacToeHighscore/issues"
     },
-    "homepage": "https://gitlab.com/HerrDredd/todolistapi#readme",
+    "homepage": "https://github.com/andrej5000/TicTacToeHighscore#readme",
     "devDependencies": {
         "nodemon": "1.18.10"
     },
