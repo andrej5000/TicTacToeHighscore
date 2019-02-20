@@ -4,13 +4,13 @@ const express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
-    Task = require('./api/models/todoListModel'), // created model loading here
+    Score = require('./api/models/highscoreModel'), // created model loading here
     bodyParser = require('body-parser');
 
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
-    'mongodb://localhost/Tododb',
+    'mongodb://localhost/TicTacToeHighscoreDB',
     {
         useNewUrlParser: true
     }
@@ -26,13 +26,13 @@ app.use(bodyParser.json());
 });*/
 
 
-const routes = require('./api/routes/todoListRoutes'); // importing routes
+const routes = require('./api/routes/highscoreRoutes'); // importing routes
 routes(app);
 
 app.listen(port);
 
 console.log(
-    '\n--------------------------------------------------\n' +
-    '==> Todo list RESTful API server started on: ' + port +
-    '\n--------------------------------------------------\n'
+    '\n----------------------------------------------------------- \n' +
+    '==> TicTacToe Highscore RESTful API server started on: ' + port +
+    '\n----------------------------------------------------------- \n'
 );
