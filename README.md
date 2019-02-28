@@ -101,4 +101,8 @@ $ npm run start
 
 ##### Voilá! Have fun :-)
 
+ <br />
+
+<i><small>Courtesy to: https://www.codementor.io/olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd</small></i>
+
 <br /><br /><br /><br />

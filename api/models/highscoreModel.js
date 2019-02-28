@@ -10,7 +10,7 @@ const HighscoreSchema = new Schema({
         type: String,
         required: 'Kindly enter the name of the player'
     },
-    Created_date: {
+    createdAt: {
         type: Date,
         default: Date.now
     },
