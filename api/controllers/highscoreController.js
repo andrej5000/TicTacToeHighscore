@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const Highscore = mongoose.model('Highscores');
 
 
-exports.list_all_scores = function (request, response) {
+exports.getList = function (request, response) {
+
+    //console.log('LIST SCORE CALLED');
 
     Highscore.find({}, function (error, score) {
 
@@ -15,7 +17,9 @@ exports.list_all_scores = function (request, response) {
 };
 
 
-exports.create_score = function (request, response) {
+exports.save = function (request, response) {
+
+    //console.log('CREATE SCORE CALLED');
 
     const new_score = new Highscore(request.body);
 
@@ -28,7 +32,7 @@ exports.create_score = function (request, response) {
 };
 
 
-exports.read_score = function (request, response) {
+exports.getById = function (request, response) {
 
     Highscore.findById(request.params.scoreId, function (error, score) {
 
@@ -39,7 +43,7 @@ exports.read_score = function (request, response) {
 };
 
 
-exports.update_score = function (request, response) {
+exports.updateById = function (request, response) {
 
     Highscore.findOneAndUpdate(
         {
@@ -59,16 +63,7 @@ exports.update_score = function (request, response) {
 };
 
 
-exports.delete_score = function (request, response) {
-
-    let playerName = '';
-
-    Highscore.findById(request.params.scoreId, function (error, score) {
-
-        handleError(error);
-
-        playerName = score.name;
-    });
+exports.deleteById = function (request, response) {
 
     Highscore.remove(
         {
@@ -79,7 +74,7 @@ exports.delete_score = function (request, response) {
             handleError(error, response);
 
             response.json({
-                message: 'Score ´' + playerName + '´ successfully deleted'
+                message: 'Score ´' + request.params.scoreId + '´ successfully deleted'
             });
         }
     )

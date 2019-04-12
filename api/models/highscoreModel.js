@@ -14,8 +14,8 @@ const HighscoreSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    score: {
-        type: Number,
+    gameDuration: {
+        type: String,
         required: 'Kindly enter a score'
     }
 });

@@ -6,11 +6,11 @@ module.exports = function (app) {
 
     // highscore routes
     app.route('/highscore')
-        .get(highscore.list_all_scores)
-        .post(highscore.create_score);
+        .get(highscore.getList)
+        .post(highscore.save);
 
     app.route('/highscore/:scoreId')
-        .get(highscore.read_score)
-        .put(highscore.update_score)
-        .delete(highscore.delete_score);
+        .get(highscore.getById)
+        .put(highscore.updateById)
+        .delete(highscore.deleteById);
 };

@@ -2,6 +2,7 @@
 
 const express = require('express'),
     app = express(),
+    cors = require('cors'),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
     Score = require('./api/models/highscoreModel'), // created model loading here
@@ -9,12 +10,16 @@ const express = require('express'),
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect(
-    'mongodb://localhost/TicTacToeHighscoreDB',
-    {
+mongoose
+    .connect('mongodb://localhost/TicTacToeHighscoreDB', {
         useNewUrlParser: true
-    }
-);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+
+app.options('http://localhost:8080', cors()); // include before other routes
+app.use(cors());
 
 app.use(bodyParser.urlencoded({
     extended: true
